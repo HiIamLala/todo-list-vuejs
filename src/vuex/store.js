@@ -1,8 +1,10 @@
 import _ from "lodash";
 import { createStore } from "vuex";
 import data from "./todo.data.json";
+import VuexPersistence from "vuex-persist";
 
 const store = createStore({
+  plugins: [new VuexPersistence().plugin],
   state() {
     return {
       todos: data,
